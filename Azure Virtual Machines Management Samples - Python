@@ -8,19 +8,25 @@ Running this sample
 
     We recommend that you use a virtual environment to run this example, but it's not mandatory. Install and initialize the virtual environment with:
 
+    ----------------------------------- CMD ------------------------------------
     pip install virtualenv
     virtualenv mytestenv
     cd mytestenv
     source bin/activate
-
+    ----------------------------------- CMD ------------------------------------
+    
     Clone the repository.
 
+    ----------------------------------- CMD ------------------------------------
     git clone https://github.com/Azure-Samples/virtual-machines-python-manage.git
+    ----------------------------------- CMD ------------------------------------
 
     Install the dependencies using pip.
-
+    
+    ----------------------------------- CMD ------------------------------------
     cd virtual-machines-python-manage
     pip install -r requirements.txt
+    ----------------------------------- CMD ------------------------------------
 
     Create an Azure service principal either through Azure CLI, PowerShell or the portal.
 
@@ -28,14 +34,19 @@ Running this sample
 
     Fill in and export these environment variables into your current shell.
 
+    ----------------------------------- CMD ------------------------------------
     export AZURE_TENANT_ID={your tenant id}
     export AZURE_CLIENT_ID={your client id}
     export AZURE_CLIENT_SECRET={your client secret}
     export AZURE_SUBSCRIPTION_ID={your subscription id}
+    ----------------------------------- CMD ------------------------------------
+    
 
     Run the sample.
 
+    ----------------------------------- CMD ------------------------------------
     python example.py
+    ----------------------------------- CMD ------------------------------------
 
 Notes
 Retrieving a VM's OS disk
