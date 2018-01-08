@@ -1,0 +1,8 @@
+# To setup PIP in windows 
+
+
+go to URL: https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip
+
+download get-pip.py and copy to windows and run "python get-pip.py"
+
+
