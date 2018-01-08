@@ -1,0 +1,48 @@
+Ref : https://azure.microsoft.com/en-us/resources/samples/virtual-machines-python-manage/
+
+Running this sample
+
+    If you don't already have it, install Python.
+
+    This sample (and the SDK) is compatible with Python 2.7, 3.3, 3.4, 3.5 and 3.6.
+
+    We recommend that you use a virtual environment to run this example, but it's not mandatory. Install and initialize the virtual environment with:
+
+    pip install virtualenv
+    virtualenv mytestenv
+    cd mytestenv
+    source bin/activate
+
+    Clone the repository.
+
+    git clone https://github.com/Azure-Samples/virtual-machines-python-manage.git
+
+    Install the dependencies using pip.
+
+    cd virtual-machines-python-manage
+    pip install -r requirements.txt
+
+    Create an Azure service principal either through Azure CLI, PowerShell or the portal.
+
+    Retrieve the application ID (a.k.a. client ID), authentication key (a.k.a. client secret), tenant ID and subscription ID from the Azure portal for use in the next step. This document describes where to find them (besides the subscription ID, which is in the "Overview" section of the "Subscriptions" blade.)
+
+    Fill in and export these environment variables into your current shell.
+
+    export AZURE_TENANT_ID={your tenant id}
+    export AZURE_CLIENT_ID={your client id}
+    export AZURE_CLIENT_SECRET={your client secret}
+    export AZURE_SUBSCRIPTION_ID={your subscription id}
+
+    Run the sample.
+
+    python example.py
+
+Notes
+Retrieving a VM's OS disk
+
+You may be tempted to try to retrieve a VM's OS disk by using virtual_machine.storage_profile.os_disk. In some cases, this may do what you want, but be aware that it gives you an OSDisk object. In order to update the OS Disk's size, as example.py does, you need not an OSDisk object but a Disk object. example.py gets the Disk object with the following:
+
+os_disk_name = virtual_machine.storage_profile.os_disk.name
+os_disk = compute_client.disks.get(GROUP_NAME, os_disk_name)
+
+More information
